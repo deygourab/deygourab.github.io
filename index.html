@@ -150,14 +150,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .edu-deg{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--pale);margin-bottom:0.2rem}
 .edu-inst{font-size:0.88rem;color:var(--ash);margin-bottom:0.5rem}
 .edu-pill{display:inline-block;padding:0.22rem 0.7rem;background:rgba(214,126,56,0.12);border:1px solid rgba(214,126,56,0.3);border-radius:4px;font-size:0.65rem;font-weight:700;color:var(--gold);letter-spacing:0.05em}
-.edu-item-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem}
-.edu-item-content{flex:1;min-width:0}
-.edu-logo-wrap{flex-shrink:0;width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid var(--rim);display:flex;align-items:center;justify-content:center;padding:10px;transition:all 0.35s;overflow:hidden}
-.edu-item:hover .edu-logo-wrap{border-color:rgba(214,126,56,0.35);background:rgba(255,255,255,0.1);box-shadow:0 0 20px rgba(214,126,56,0.15);transform:scale(1.08)}
-.edu-logo-wrap img{width:100%;height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:0.5;transition:opacity 0.35s}
-.edu-logo-wrap img.color-logo{filter:none;opacity:0.8}
-.edu-item:hover .edu-logo-wrap img{opacity:0.9}
-.edu-item:hover .edu-logo-wrap img.color-logo{opacity:1}
 
 /* EXPERIENCE */
 .exp-list{display:flex;flex-direction:column;gap:1.2rem}
@@ -303,7 +295,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
     <li><a href="#publications">Publications</a></li>
     <li><a href="#location">Location</a></li>
   </ul>
-  <a href="/cdn-cgi/l/email-protection#7a1d150f081b181e1f0348483a13130e11541b19541314" class="nav-btn">Contact</a>
+  <a href="mailto:gourabdey22@iitk.ac.in" class="nav-btn">Contact</a>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
@@ -313,7 +305,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
   <a href="#research" onclick="toggleMenu()">Research</a>
   <a href="#publications" onclick="toggleMenu()">Publications</a>
   <a href="#location" onclick="toggleMenu()">Location</a>
-  <a href="/cdn-cgi/l/email-protection#51363e242330333534286363113838253a7f30327f383f" onclick="toggleMenu()">Contact</a>
+  <a href="mailto:gourabdey22@iitk.ac.in" onclick="toggleMenu()">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -330,7 +322,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
       <div class="hero-btns">
         <a href="#publications" class="btn btn-gold">Publications →</a>
         <a href="#about" class="btn btn-ghost">About Me</a>
-        <a href="/cdn-cgi/l/email-protection#60070f151201020405195252200909140b4e01034e090e" class="btn btn-ghost">Contact</a>
+        <a href="mailto:gourabdey22@iitk.ac.in" class="btn btn-ghost">Contact</a>
       </div>
     </div>
 
@@ -423,68 +415,35 @@ footer span{font-size:0.72rem;color:var(--dim)}
     </div>
     <div class="edu-track">
       <div class="edu-item reveal">
-        <div class="edu-item-inner">
-          <div class="edu-item-content">
-            <div class="edu-yr">2022 – Present</div>
-            <div class="edu-deg">PhD — Earth Sciences</div>
-            <div class="edu-inst">Indian Institute of Technology, Kanpur</div>
-            <span class="edu-pill">CPI 9.83 / 10</span>
-          </div>
-          <div class="edu-logo-wrap">
-            <img src="iitk_logo.png" alt="IIT Kanpur">
-          </div>
-        </div>
+        <div class="edu-yr">2022 – Present</div>
+        <div class="edu-deg">PhD — Earth Sciences</div>
+        <div class="edu-inst">Indian Institute of Technology, Kanpur</div>
+        <span class="edu-pill">CPI 9.83 / 10</span>
       </div>
       <div class="edu-item reveal">
-        <div class="edu-item-inner">
-          <div class="edu-item-content">
-            <div class="edu-yr">2019 – 2021</div>
-            <div class="edu-deg">M.Sc — Geology</div>
-            <div class="edu-inst">Indian Institute of Technology, Kharagpur</div>
-            <span class="edu-pill">CPI 9.18 / 10</span>
-          </div>
-          <div class="edu-logo-wrap">
-            <img src="iitkgp_logo.png" alt="IIT Kharagpur">
-          </div>
-        </div>
+        <div class="edu-yr">2019 – 2021</div>
+        <div class="edu-deg">M.Sc — Geology</div>
+        <div class="edu-inst">Indian Institute of Technology, Kharagpur</div>
+        <span class="edu-pill">CPI 9.18 / 10</span>
       </div>
       <div class="edu-item reveal">
-        <div class="edu-item-inner">
-          <div class="edu-item-content">
-            <div class="edu-yr">2016 – 2019</div>
-            <div class="edu-deg">B.Sc — Geology</div>
-            <div class="edu-inst">Durgapur Government College</div>
-            <span class="edu-pill">CPI 8.34 / 10</span>
-          </div>
-          <div class="edu-logo-wrap" style="font-size:1.8rem;opacity:0.35">🏛️</div>
-        </div>
+        <div class="edu-yr">2016 – 2019</div>
+        <div class="edu-deg">B.Sc — Geology</div>
+        <div class="edu-inst">Durgapur Government College</div>
+        <span class="edu-pill">CPI 8.34 / 10</span>
       </div>
       <div class="edu-item reveal">
-        <div class="edu-item-inner">
-          <div class="edu-item-content">
-            <div class="edu-yr">2016</div>
-            <div class="edu-deg">WBCHSE (XII)</div>
-            <div class="edu-inst">Kamalpur Netaji High School</div>
-            <span class="edu-pill">80.20%</span>
-          </div>
-          <div class="edu-logo-wrap">
-            <img src="knhs_logo.jpg" alt="KNHS" class="color-logo">
-          </div>
-        </div>
+        <div class="edu-yr">2016</div>
+        <div class="edu-deg">WBCHSE (XII)</div>
+        <div class="edu-inst">Kamalpur Netaji High School</div>
+        <span class="edu-pill">80.20%</span>
       </div>
       <div class="edu-item reveal">
-        <div class="edu-item-inner">
-          <div class="edu-item-content">
-            <div class="edu-yr">2014</div>
-            <div class="edu-deg">WBBSE (X)</div>
-            <div class="edu-inst">Kamalpur Netaji High School</div>
-            <span class="edu-pill">85.28%</span>
-          </div>
-          <div class="edu-logo-wrap">
-            <img src="knhs_logo.jpg" alt="KNHS" class="color-logo">
-          </div>
+        <div class="edu-yr">2014</div>
+        <div class="edu-deg">WBBSE (X)</div>
+        <div class="edu-inst">Kamalpur Netaji High School</div>
+        <span class="edu-pill">85.28%</span>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -699,12 +658,12 @@ footer span{font-size:0.72rem;color:var(--dim)}
       <div class="eyebrow">Contact</div>
       <h2 class="stitle">Let's<br><em>Connect</em></h2>
       <p class="ssub">Open to research collaborations, academic discussions, and opportunities in impact geology, structural geoscience, and sedimentary basin analysis.</p>
-      <a href="/cdn-cgi/l/email-protection#b1d6dec4c3d0d3d5d4c88383f1d8d8c5da9fd0d29fd8df" class="btn btn-gold">Send Email →</a>
+      <a href="mailto:gourabdey22@iitk.ac.in" class="btn btn-gold">Send Email →</a>
     </div>
     <div class="contact-items reveal-right">
-      <a href="/cdn-cgi/l/email-protection#bbdcd4cec9dad9dfdec28989fbd2d2cfd095dad895d2d5" class="ci">
+      <a href="mailto:gourabdey22@iitk.ac.in" class="ci">
         <div class="ci-ico">✉️</div>
-        <div><span class="ci-lbl">Email</span><span class="ci-val"><span class="__cf_email__" data-cfemail="e4838b9196858680819dd6d6a48d8d908fca8587ca8d8a">[email&#160;protected]</span></span></div>
+        <div><span class="ci-lbl">Email</span><span class="ci-val">gourabdey22@iitk.ac.in</span></div>
       </a>
       <a href="https://iitk.ac.in/es/" target="_blank" class="ci">
         <div class="ci-ico">🎓</div>
@@ -721,7 +680,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
 <footer>
   <span>© 2025 Gourab Dey · PhD Researcher, IIT Kanpur</span>
   <div class="footer-links">
-    <a href="/cdn-cgi/l/email-protection#6601091314070402031f5454260f0f120d480705480f08">Email</a>
+    <a href="mailto:gourabdey22@iitk.ac.in">Email</a>
     <a href="#publications">Publications</a>
     <a href="#location">Location</a>
   </div>
@@ -730,7 +689,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
 
 </div><!-- /pg -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── CUSTOM CURSOR ──
 const cur = document.getElementById('cur');
 const cur2 = document.getElementById('cur2');
