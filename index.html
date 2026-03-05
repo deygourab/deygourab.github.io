@@ -6,7 +6,6 @@
 <title>Gourab Dey — Geologist & PhD Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -176,7 +175,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
 .footer-links a{font-size:0.72rem;color:var(--dim);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
 
-/* ── VISITOR BAR ── */
+/* VISITOR BAR */
 .visitor-bar{background:var(--deep);border-top:1px solid var(--rim);padding:.75rem 3.5rem;display:flex;align-items:center;justify-content:center;gap:1.2rem}
 .visitor-bar-inner{display:flex;align-items:center;gap:.8rem}
 .visitor-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:vPulse 2.5s infinite;flex-shrink:0}
@@ -186,9 +185,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
 .visitor-sep{width:1px;height:14px;background:var(--rim);flex-shrink:0}
 .visitor-since{font-size:.62rem;letter-spacing:.1em;color:var(--dim)}
 
-/* ════════════════════════════════════
-   FEATURE 1 — GEOLOGY FACT TICKER
-════════════════════════════════════ */
+/* TICKER */
 .ticker-strip{background:#060609;border-top:1px solid var(--rim);border-bottom:1px solid var(--rim);overflow:hidden;position:relative;z-index:1}
 .ticker-label{position:absolute;left:0;top:0;bottom:0;z-index:2;padding:0 1.2rem;background:var(--gold);display:flex;align-items:center;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
 .ticker-mask{margin-left:130px;overflow:hidden}
@@ -198,30 +195,9 @@ footer span{font-size:0.72rem;color:var(--dim)}
 .ticker-item span{color:var(--gold);font-size:.7rem}
 @keyframes tickerScroll{to{transform:translateX(-50%)}}
 
-/* ════════════════════════════════════
-   FEATURE 2 — INTERACTIVE GLOBE
-════════════════════════════════════ */
-.globe-section{background:var(--deep);border-top:1px solid var(--rim);border-bottom:1px solid var(--rim)}
-.globe-wrap{display:grid;grid-template-columns:1fr 300px;gap:2.5rem;align-items:center}
-#globeCanvas{width:100%;aspect-ratio:1;border-radius:16px;border:1px solid var(--rim);background:radial-gradient(ellipse at 40% 40%,#0d1420,#060609);display:block;cursor:grab}
-#globeCanvas:active{cursor:grabbing}
-.globe-sites{display:flex;flex-direction:column;gap:.7rem}
-.site-card{padding:1rem 1.2rem;background:var(--card);border:1px solid var(--rim);border-radius:10px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
-.site-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform .3s}
-.site-card:hover,.site-card.active{border-color:var(--rim2)}
-.site-card.active::before,.site-card:hover::before{transform:scaleY(1)}
-.site-card-top{display:flex;align-items:center;gap:.7rem;margin-bottom:.25rem}
-.site-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.site-name{font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;color:var(--pale)}
-.site-loc{font-size:.68rem;color:var(--dim)}
-.site-desc{font-size:.75rem;color:var(--ash);line-height:1.6;margin-top:.4rem;display:none}
-.site-card.active .site-desc{display:block}
-.globe-hint{text-align:center;margin-top:1rem;font-size:.65rem;color:var(--dim);letter-spacing:.08em}
-
-/* ════════════════════════════════════
-   FEATURE 3 — CRATER COMPARATOR
-════════════════════════════════════ */
-.crater-section{}
+/* ════════════════════════
+   CRATER COMPARATOR
+════════════════════════ */
 .crater-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:end;margin-bottom:1.5rem}
 .crater-item{display:flex;flex-direction:column;align-items:center;gap:.8rem;cursor:default}
 .crater-circle-wrap{display:flex;align-items:flex-end;justify-content:center;height:260px}
@@ -238,25 +214,27 @@ footer span{font-size:0.72rem;color:var(--dim)}
 .cib-lbl{font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:block;margin-top:.3rem}
 .crater-item.highlight .crater-circle{border-color:var(--gold);box-shadow:0 0 50px rgba(214,126,56,.2)}
 
-/* ════════════════════════════════════
-   FEATURE 4 — COLLABORATION MAP
-════════════════════════════════════ */
+/* ════════════════════════
+   COLLABORATION MAP — FIXED
+════════════════════════ */
 .collab-section{}
 .map-wrap{background:var(--card);border:1px solid var(--rim);border-radius:12px;overflow:hidden}
-.collab-svg-wrap{position:relative;width:100%;overflow:hidden}
-#collabMap{width:100%;display:block}
-.map-tooltip{position:absolute;background:rgba(8,9,15,.95);border:1px solid var(--rim2);border-radius:8px;padding:.7rem 1rem;font-size:.75rem;color:var(--pale);pointer-events:none;opacity:0;transition:opacity .2s;z-index:10;max-width:200px}
-.map-tooltip strong{color:var(--gold);display:block;margin-bottom:.2rem;font-size:.8rem}
+.collab-svg-wrap{position:relative;width:100%;overflow:hidden;background:#060a14}
+#collabMap{width:100%;display:block;height:auto}
+.map-tooltip{position:absolute;background:rgba(8,9,15,.96);border:1px solid var(--rim2);border-radius:8px;padding:.7rem 1rem;font-size:.75rem;color:var(--pale);pointer-events:none;opacity:0;transition:opacity .2s;z-index:10;max-width:210px;line-height:1.5}
+.map-tooltip strong{color:var(--gold);display:block;margin-bottom:.15rem;font-size:.82rem}
 .map-tooltip span{color:var(--ash);font-size:.7rem}
 .collab-legend{display:flex;flex-wrap:wrap;gap:1rem;padding:1rem 1.5rem;border-top:1px solid var(--rim);background:#0d0e14}
 .leg-item{display:flex;align-items:center;gap:.5rem;font-size:.68rem;color:var(--ash)}
 .leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-@keyframes mapPulse{0%{opacity:.7;r:5}100%{opacity:0;r:16}}
-.pulse-ring{animation:mapPulse 2.2s ease-out infinite}
-.conn-line{stroke:var(--gold);stroke-width:.8;fill:none;stroke-dasharray:5 4;opacity:.2;animation:dashFlow 4s linear infinite}
-@keyframes dashFlow{to{stroke-dashoffset:-36}}
+/* Animated pulse rings on map */
+@keyframes mapPulse{0%{r:5;opacity:.9}100%{r:18;opacity:0}}
+.pulse-ring{animation:mapPulse 2.4s ease-out infinite}
+/* Animated dashed connection lines */
+.conn-line{fill:none;stroke:var(--gold);stroke-width:.8;stroke-dasharray:5 5;opacity:.35;animation:dashFlow 3s linear infinite}
+@keyframes dashFlow{to{stroke-dashoffset:-40}}
 
-/* ── MOBILE MENU ── */
+/* MOBILE MENU */
 .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(8,9,15,.97);backdrop-filter:blur(20px);z-index:499;padding:1.5rem;flex-direction:column;gap:.5rem;border-bottom:1px solid var(--rim)}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-size:.9rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ash);text-decoration:none;padding:.7rem .5rem;border-bottom:1px solid var(--rim)}
@@ -275,8 +253,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
   .sec{padding:5rem 1.5rem}
   .about-grid,.contact-layout{grid-template-columns:1fr;gap:3rem}
   .exp-card{grid-template-columns:1fr;gap:.3rem}
-  .location-grid,.globe-wrap{grid-template-columns:1fr}
-  #globeCanvas{max-width:400px;margin:0 auto}
+  .location-grid{grid-template-columns:1fr}
   .crater-grid{grid-template-columns:repeat(2,1fr)}
   .crater-info-bar{grid-template-columns:repeat(2,1fr)}
   footer{flex-direction:column;gap:1rem;text-align:center;padding:1.5rem}
@@ -308,7 +285,6 @@ footer span{font-size:0.72rem;color:var(--dim)}
     <li><a href="#education">Education</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
-    <li><a href="#globe">Field Sites</a></li>
     <li><a href="#location">Location</a></li>
   </ul>
   <a href="mailto:gourabdey22@iitk.ac.in" class="nav-btn">Contact</a>
@@ -320,7 +296,6 @@ footer span{font-size:0.72rem;color:var(--dim)}
   <a href="#education" onclick="toggleMenu()">Education</a>
   <a href="#research" onclick="toggleMenu()">Research</a>
   <a href="#publications" onclick="toggleMenu()">Publications</a>
-  <a href="#globe" onclick="toggleMenu()">Field Sites</a>
   <a href="#location" onclick="toggleMenu()">Location</a>
   <a href="mailto:gourabdey22@iitk.ac.in" onclick="toggleMenu()">Contact</a>
 </div>
@@ -358,7 +333,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
   <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- ══ TICKER (after hero) ══ -->
+<!-- TICKER -->
 <div class="ticker-strip">
   <div class="ticker-label">⚡ Geo Facts</div>
   <div class="ticker-mask">
@@ -372,6 +347,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
       <div class="ticker-item"><span>◆</span> Earth has over 190 confirmed impact craters — the Moon has hundreds of thousands</div>
       <div class="ticker-item"><span>◆</span> The Deccan Traps volcanic province covers ~500,000 km² of the Indian subcontinent</div>
       <div class="ticker-item"><span>◆</span> XRD analysis can identify minerals at concentrations as low as 1% in a rock sample</div>
+      <!-- duplicate for seamless loop -->
       <div class="ticker-item"><span>◆</span> The Lonar Crater is ~50,000 years old — one of the youngest and best-preserved impact structures on Earth</div>
       <div class="ticker-item"><span>◆</span> Meteorite impacts can release energy millions of times greater than nuclear bombs</div>
       <div class="ticker-item"><span>◆</span> Lonar Lake is one of only four known hyper-saline crater lakes in the world</div>
@@ -450,30 +426,31 @@ footer span{font-size:0.72rem;color:var(--dim)}
       <h2 class="stitle">Research<br><em>Output</em></h2>
       <p class="ssub">Peer-reviewed articles and international conference papers — click any card to view the full paper.</p>
     </div>
+
+    <!-- Second ticker (reverse) -->
+    <div class="ticker-strip" style="margin-bottom:3rem;border-radius:8px">
+      <div class="ticker-label">🌍 Did You Know</div>
+      <div class="ticker-mask">
+        <div class="ticker-inner" style="animation-direction:reverse;animation-duration:50s">
+          <div class="ticker-item"><span>◆</span> Impact melt rocks at Lonar contain maskelynite — a shocked form of plagioclase feldspar</div>
+          <div class="ticker-item"><span>◆</span> The Narmada Basin preserves one of the most complete K-Pg boundary records in India</div>
+          <div class="ticker-item"><span>◆</span> Fold-and-thrust belts form where tectonic plates collide — the Himalayas are Earth's largest active example</div>
+          <div class="ticker-item"><span>◆</span> Digital Elevation Models (DEMs) can map terrain down to centimetre-scale resolution</div>
+          <div class="ticker-item"><span>◆</span> GATE (Geology) is one of India's most competitive postgraduate entrance exams — qualifying 3× is remarkable</div>
+          <div class="ticker-item"><span>◆</span> Impact melt rocks at Lonar contain maskelynite — a shocked form of plagioclase feldspar</div>
+          <div class="ticker-item"><span>◆</span> The Narmada Basin preserves one of the most complete K-Pg boundary records in India</div>
+          <div class="ticker-item"><span>◆</span> Fold-and-thrust belts form where tectonic plates collide — the Himalayas are Earth's largest active example</div>
+          <div class="ticker-item"><span>◆</span> Digital Elevation Models (DEMs) can map terrain down to centimetre-scale resolution</div>
+          <div class="ticker-item"><span>◆</span> GATE (Geology) is one of India's most competitive postgraduate entrance exams — qualifying 3× is remarkable</div>
+        </div>
+      </div>
+    </div>
+
     <div class="pub-list">
       <a href="https://doi.org/10.17491/jgsi/2025/174116" target="_blank" class="pub-card reveal"><div class="pub-n">01</div><div><span class="pub-tag tag-j">Journal · 2025</span><div class="pub-ttl">Direction of impact at Lonar Crater, India: Results from microfracture density and X-ray diffraction analysis</div><div class="pub-auth">Tiwari, S., <span class="me">Dey, G.</span>, Joshi, G., Agarwal, A., Wilk, J., & Agarwal, K. K.</div><div class="pub-jrnl">Journal of the Geological Society of India, 101, 453–460</div><span class="pub-doi">DOI: 10.17491/jgsi/2025/174116</span></div></a>
       <a href="https://doi.org/10.3390/min15080766" target="_blank" class="pub-card reveal"><div class="pub-n">02</div><div><span class="pub-tag tag-j">Journal · 2025</span><div class="pub-ttl">Sedimentary Stylolites Roughness Inversion Enables the Quantification of the Eroded Thickness of Deccan Trap Above the Bagh Group, Narmada Basin, India</div><div class="pub-auth">Ruidas, D.K., Beaudoin, N.E., Thakur, S., Musib, A., & <span class="me">Dey, G.</span></div><div class="pub-jrnl">Minerals, 15, 766</div><span class="pub-doi">DOI: 10.3390/min15080766</span></div></a>
       <a href="https://doi.org/10.5194/epsc-dps2025-1537" target="_blank" class="pub-card reveal"><div class="pub-n">03</div><div><span class="pub-tag tag-c">Conference · EPSC-DPS 2025 · Helsinki</span><div class="pub-ttl">Shaped by the Double: Investigating Double-Layered Ejecta at Ries and Lonar Craters</div><div class="pub-auth">Wilk, J., Agarwal, A., <span class="me">Dey, G.</span>, & Tiwari, S.</div><div class="pub-jrnl">EPSC-DPS Joint Meeting 2025, Helsinki, Finland, 7–12 Sep 2025</div><span class="pub-doi">DOI: 10.5194/epsc-dps2025-1537</span></div></a>
       <a href="https://doi.org/10.5194/epsc2024-1138" target="_blank" class="pub-card reveal"><div class="pub-n">04</div><div><span class="pub-tag tag-c">Conference · EPSC 2024 · Berlin</span><div class="pub-ttl">Unraveling double-layered ejecta: Lessons from Lonar Crater and beyond</div><div class="pub-auth">Wilk, J., Agarwal, A., & <span class="me">Dey, G.</span></div><div class="pub-jrnl">Europlanet Science Congress 2024, Berlin, Germany, 8–13 Sep 2024</div><span class="pub-doi">DOI: 10.5194/epsc2024-1138</span></div></a>
-    </div>
-  </div>
-</div>
-
-<!-- ══ TICKER 2 (between publications and skills) ══ -->
-<div class="ticker-strip">
-  <div class="ticker-label">🌍 Did You Know</div>
-  <div class="ticker-mask">
-    <div class="ticker-inner" style="animation-direction:reverse;animation-duration:50s">
-      <div class="ticker-item"><span>◆</span> Impact melt rocks at Lonar contain maskelynite — a shocked form of plagioclase feldspar</div>
-      <div class="ticker-item"><span>◆</span> The Narmada Basin preserves one of the most complete Cretaceous–Paleogene boundary records in India</div>
-      <div class="ticker-item"><span>◆</span> Fold-and-thrust belts form where tectonic plates collide — the Himalayas are Earth's largest active example</div>
-      <div class="ticker-item"><span>◆</span> Digital Elevation Models (DEMs) can map terrain down to centimetre-scale resolution</div>
-      <div class="ticker-item"><span>◆</span> GATE (Geology) is one of India's most competitive postgraduate entrance exams — qualifying 3× is remarkable</div>
-      <div class="ticker-item"><span>◆</span> Impact melt rocks at Lonar contain maskelynite — a shocked form of plagioclase feldspar</div>
-      <div class="ticker-item"><span>◆</span> The Narmada Basin preserves one of the most complete Cretaceous–Paleogene boundary records in India</div>
-      <div class="ticker-item"><span>◆</span> Fold-and-thrust belts form where tectonic plates collide — the Himalayas are Earth's largest active example</div>
-      <div class="ticker-item"><span>◆</span> Digital Elevation Models (DEMs) can map terrain down to centimetre-scale resolution</div>
-      <div class="ticker-item"><span>◆</span> GATE (Geology) is one of India's most competitive postgraduate entrance exams — qualifying 3× is remarkable</div>
     </div>
   </div>
 </div>
@@ -487,7 +464,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
   </div>
   <div class="skills-grid">
     <div class="sk-card reveal"><div class="sk-ico">🗺️</div><div class="sk-name">Geological Mapping</div><div class="sk-desc">Structural and lithological field mapping, paleocurrent analysis, sand body architecture.</div><div class="sk-pills"><span class="sk-pill">QGIS</span><span class="sk-pill">Google Earth</span><span class="sk-pill">ERDAS</span><span class="sk-pill">GMT</span></div></div>
-    <div class="sk-card reveal"><div class="sk-ico">🔬</div><div class="sk-name">Laboratory Analysis</div><div class="sk-desc">Rock &amp; ore identification, mineral characterization via XRD, microstructure via SEM.</div><div class="sk-pills"><span class="sk-pill">XRD</span><span class="sk-pill">SEM</span><span class="sk-pill">Microscopy</span></div></div>
+    <div class="sk-card reveal"><div class="sk-ico">🔬</div><div class="sk-name">Laboratory Analysis</div><div class="sk-desc">Rock & ore identification, mineral characterization via XRD, microstructure via SEM.</div><div class="sk-pills"><span class="sk-pill">XRD</span><span class="sk-pill">SEM</span><span class="sk-pill">Microscopy</span></div></div>
     <div class="sk-card reveal"><div class="sk-ico">🪐</div><div class="sk-name">Impact Geology</div><div class="sk-desc">Ejecta distribution mapping, DEM generation, microfracture density, impact direction.</div><div class="sk-pills"><span class="sk-pill">Lonar Crater</span><span class="sk-pill">DEM</span><span class="sk-pill">Ejecta Mapping</span></div></div>
     <div class="sk-card reveal"><div class="sk-ico">💻</div><div class="sk-name">Scientific Computing</div><div class="sk-desc">Scientific writing, data analysis and graphical representation for research output.</div><div class="sk-pills"><span class="sk-pill">LaTeX</span><span class="sk-pill">GeoRose</span><span class="sk-pill">GeoOrient</span><span class="sk-pill">Zmap</span></div></div>
   </div>
@@ -502,113 +479,246 @@ footer span{font-size:0.72rem;color:var(--dim)}
   </div>
 </section>
 
-<!-- ══ FEATURE: INTERACTIVE GLOBE ══ -->
-<div class="stripe globe-section" id="globe">
-  <div class="sec">
+<!-- CRATER COMPARATOR -->
+<div class="stripe">
+  <div class="sec" id="craters">
     <div class="reveal">
-      <div class="eyebrow">Field Sites</div>
-      <h2 class="stitle">Research<br><em>Locations</em></h2>
-      <p class="ssub">A 3D map of every place tied to my research — from field sites to conferences. Drag to rotate, click a card to fly there.</p>
+      <div class="eyebrow">Impact Scale</div>
+      <h2 class="stitle">Crater<br><em>Comparator</em></h2>
+      <p class="ssub">Circles drawn to true relative scale — see exactly how Lonar compares to the most famous impact structures on Earth.</p>
     </div>
-    <div class="globe-wrap">
-      <canvas id="globeCanvas"></canvas>
-      <div>
-        <div class="globe-sites">
-          <div class="site-card active" onclick="focusSite(this,26.51,80.23)">
-            <div class="site-card-top"><div class="site-dot" style="background:#d67e38"></div><div class="site-name">IIT Kanpur</div></div>
-            <div class="site-loc">26.5°N · 80.2°E · Uttar Pradesh</div>
-            <div class="site-desc">Current institution — PhD in Earth Sciences. Dept. of Earth Sciences, Kanpur, UP.</div>
-          </div>
-          <div class="site-card" onclick="focusSite(this,19.97,76.50)">
-            <div class="site-card-top"><div class="site-dot" style="background:#f0a855"></div><div class="site-name">Lonar Crater</div></div>
-            <div class="site-loc">19.9°N · 76.5°E · Maharashtra</div>
-            <div class="site-desc">Primary research site — 4 field expeditions. ~50,000 yr old meteorite impact crater, 1.8 km diameter.</div>
-          </div>
-          <div class="site-card" onclick="focusSite(this,22.32,87.32)">
-            <div class="site-card-top"><div class="site-dot" style="background:#6ea8d8"></div><div class="site-name">IIT Kharagpur</div></div>
-            <div class="site-loc">22.3°N · 87.3°E · West Bengal</div>
-            <div class="site-desc">M.Sc Geology (CPI 9.18/10). Thesis on Critical Taper Model under Prof. Saibal Gupta.</div>
-          </div>
-          <div class="site-card" onclick="focusSite(this,60.17,24.94)">
-            <div class="site-card-top"><div class="site-dot" style="background:#a89ee0"></div><div class="site-name">Helsinki</div></div>
-            <div class="site-loc">60.1°N · 24.9°E · Finland</div>
-            <div class="site-desc">EPSC-DPS Joint Meeting 2025. Presented on double-layered ejecta at Ries and Lonar craters.</div>
-          </div>
-          <div class="site-card" onclick="focusSite(this,52.52,13.40)">
-            <div class="site-card-top"><div class="site-dot" style="background:#7dcfb6"></div><div class="site-name">Berlin</div></div>
-            <div class="site-loc">52.5°N · 13.4°E · Germany</div>
-            <div class="site-desc">Europlanet Science Congress 2024. Presented on unraveling double-layered ejecta at Lonar Crater.</div>
-          </div>
-        </div>
-        <div class="globe-hint">🖱 Drag globe to rotate · Click card to fly</div>
-      </div>
+    <div class="crater-grid reveal" id="craterGrid"></div>
+    <div class="crater-info-bar reveal">
+      <div class="cib-item"><span class="cib-val"><em>1.8</em> km</span><span class="cib-lbl">Lonar diameter</span></div>
+      <div class="cib-item"><span class="cib-val"><em>26</em> km</span><span class="cib-lbl">Ries diameter</span></div>
+      <div class="cib-item"><span class="cib-val"><em>180</em> km</span><span class="cib-lbl">Chicxulub diameter</span></div>
+      <div class="cib-item"><span class="cib-val"><em>~50k</em> yrs</span><span class="cib-lbl">Lonar age</span></div>
     </div>
   </div>
 </div>
 
-<!-- ══ FEATURE: CRATER COMPARATOR ══ -->
-<section class="sec crater-section" id="craters">
+<!-- ══ COLLABORATION MAP — REBUILT ══ -->
+<section class="sec collab-section" id="collabsection">
   <div class="reveal">
-    <div class="eyebrow">Impact Scale</div>
-    <h2 class="stitle">Crater<br><em>Comparator</em></h2>
-    <p class="ssub">Circles drawn to true relative scale — see exactly how Lonar compares to the most famous impact structures on Earth.</p>
+    <div class="eyebrow">Global Reach</div>
+    <h2 class="stitle">Collaboration<br><em>Network</em></h2>
+    <p class="ssub">Where my co-authors are based and where I've presented — hover any marker for details.</p>
   </div>
-  <div class="crater-grid reveal" id="craterGrid"></div>
-  <div class="crater-info-bar reveal">
-    <div class="cib-item"><span class="cib-val"><em>1.8</em> km</span><span class="cib-lbl">Lonar diameter</span></div>
-    <div class="cib-item"><span class="cib-val"><em>26</em> km</span><span class="cib-lbl">Ries diameter</span></div>
-    <div class="cib-item"><span class="cib-val"><em>180</em> km</span><span class="cib-lbl">Chicxulub diameter</span></div>
-    <div class="cib-item"><span class="cib-val"><em>~50k</em> yrs</span><span class="cib-lbl">Lonar age</span></div>
+  <div class="map-wrap reveal">
+    <div class="collab-svg-wrap" id="mapContainer">
+      <div class="map-tooltip" id="mapTooltip"></div>
+
+      <!--
+        Coordinate system: x=(lon+180)/360*1000  y=(90-lat)/180*500
+        Key computed positions:
+          IIT Kanpur  (80.23°E, 26.51°N)  → x=723, y=176
+          Lonar Crater(76.50°E, 19.97°N)  → x=712, y=194
+          IIT Kharagpur(87.32°E,22.32°N)  → x=742, y=188
+          Berlin      (13.40°E, 52.52°N)  → x=537, y=104
+          Helsinki    (24.94°E, 60.17°N)  → x=569, y=83
+          Strasbourg  ( 7.74°E, 48.57°N)  → x=522, y=115
+          Potsdam     (13.06°E, 52.40°N)  → x=536, y=105
+      -->
+      <svg id="collabMap" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#0a1628"/>
+            <stop offset="100%" stop-color="#04060e"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Ocean background -->
+        <rect width="1000" height="500" fill="url(#bgGrad)"/>
+
+        <!-- Subtle grid lines -->
+        <g stroke="#0e1e30" stroke-width="0.5" opacity="0.8">
+          <!-- Equator -->
+          <line x1="0" y1="250" x2="1000" y2="250"/>
+          <!-- Tropics of Cancer/Capricorn -->
+          <line x1="0" y1="196" x2="1000" y2="196" stroke-dasharray="4,6"/>
+          <line x1="0" y1="304" x2="1000" y2="304" stroke-dasharray="4,6"/>
+          <!-- Polar circles -->
+          <line x1="0" y1="119" x2="1000" y2="119" stroke-dasharray="2,8"/>
+          <line x1="0" y1="381" x2="1000" y2="381" stroke-dasharray="2,8"/>
+          <!-- Vertical meridians every 30° -->
+          <line x1="83"  y1="0" x2="83"  y2="500"/>
+          <line x1="167" y1="0" x2="167" y2="500"/>
+          <line x1="250" y1="0" x2="250" y2="500"/>
+          <line x1="333" y1="0" x2="333" y2="500"/>
+          <line x1="417" y1="0" x2="417" y2="500"/>
+          <line x1="500" y1="0" x2="500" y2="500"/>
+          <line x1="583" y1="0" x2="583" y2="500"/>
+          <line x1="667" y1="0" x2="667" y2="500"/>
+          <line x1="750" y1="0" x2="750" y2="500"/>
+          <line x1="833" y1="0" x2="833" y2="500"/>
+          <line x1="917" y1="0" x2="917" y2="500"/>
+        </g>
+
+        <!-- ══ CONTINENTS ══ -->
+        <g fill="#14253a" stroke="#1e3248" stroke-width="0.7" stroke-linejoin="round">
+
+          <!-- NORTH AMERICA -->
+          <path d="M 47,50 L 111,44 L 147,44 L 228,47 L 272,78 L 311,92 L 328,119
+                   L 311,128 L 297,147 L 281,167 L 275,181 L 264,200 L 261,208
+                   L 267,222 L 278,228 L 261,225 L 247,211 L 228,206 L 206,194
+                   L 194,186 L 186,172 L 175,161 L 164,136 L 156,117 L 158,103
+                   L 150,97 L 136,92 L 122,89 L 111,86 L 100,89 L 83,92
+                   L 61,92 L 44,100 L 33,106 L 47,50 Z"/>
+
+          <!-- GREENLAND -->
+          <path d="M 336,14 L 369,11 L 408,14 L 436,22 L 450,36 L 444,50
+                   L 419,64 L 394,72 L 364,75 L 344,64 L 339,50 L 336,36 Z"/>
+
+          <!-- CUBA / CARIBBEAN approximate -->
+          <ellipse cx="258" cy="219" rx="14" ry="5" transform="rotate(-15,258,219)"/>
+
+          <!-- SOUTH AMERICA -->
+          <path d="M 275,231 L 297,222 L 317,217 L 347,222 L 375,231 L 403,256
+                   L 414,269 L 414,286 L 406,306 L 403,331 L 394,353 L 378,378
+                   L 353,403 L 328,406 L 308,397 L 300,375 L 297,353 L 300,328
+                   L 289,303 L 283,281 L 281,256 L 275,239 Z"/>
+
+          <!-- EUROPE (Western) -->
+          <path d="M 475,150 L 494,150 L 508,150 L 514,144 L 522,139
+                   L 536,136 L 547,136 L 558,142 L 561,147 L 572,147
+                   L 572,136 L 578,125 L 572,111 L 564,97 L 556,86
+                   L 547,78 L 547,67 L 539,61 L 528,64 L 519,56
+                   L 511,64 L 511,75 L 503,89 L 497,100 L 486,108
+                   L 483,117 L 481,128 L 475,131 L 472,139 L 475,150 Z"/>
+
+          <!-- SCANDINAVIA -->
+          <path d="M 519,56 L 528,47 L 536,44 L 547,47 L 561,53 L 569,64
+                   L 569,78 L 558,83 L 547,78 L 539,67 L 528,64 L 519,56 Z"/>
+          <path d="M 511,64 L 519,56 L 528,64 L 522,75 L 514,78 L 511,72 Z"/>
+
+          <!-- ICELAND -->
+          <ellipse cx="447" cy="69" rx="18" ry="9"/>
+
+          <!-- AFRICA -->
+          <path d="M 461,150 L 503,147 L 533,147 L 553,150 L 575,150
+                   L 592,153 L 600,161 L 603,169 L 608,178 L 617,186
+                   L 628,197 L 639,211 L 642,219 L 631,244 L 622,258
+                   L 617,272 L 614,286 L 611,306 L 608,325 L 600,342
+                   L 583,347 L 561,350 L 539,347 L 522,336 L 511,317
+                   L 503,300 L 494,281 L 492,261 L 494,239 L 489,222
+                   L 483,211 L 472,208 L 461,208 L 450,211 L 444,206
+                   L 444,194 L 447,181 L 453,167 L 458,153 L 461,150 Z"/>
+
+          <!-- MADAGASCAR -->
+          <path d="M 642,258 L 650,253 L 656,261 L 653,278 L 647,281
+                   L 642,272 L 642,258 Z"/>
+
+          <!-- MAIN EURASIA (without Indian subcontinent) -->
+          <path d="M 572,147 L 583,147 L 600,144 L 614,136 L 625,133
+                   L 639,133 L 650,136 L 664,133 L 683,136 L 694,133
+                   L 714,125 L 733,122 L 756,119 L 778,119 L 797,122
+                   L 811,125 L 825,131 L 836,136 L 850,131 L 858,125
+                   L 864,117 L 875,111 L 886,106 L 897,100 L 908,97
+                   L 917,89 L 928,83 L 939,78 L 947,67 L 947,56
+                   L 939,50 L 919,47 L 897,44 L 867,44 L 833,44
+                   L 806,44 L 775,41 L 744,44 L 714,42 L 689,44
+                   L 661,44 L 633,47 L 608,44 L 597,47 L 583,56
+                   L 572,69 L 564,83 L 558,97 L 561,106 L 567,117
+                   L 572,125 L 578,133 L 583,139 L 600,144 Z"/>
+
+          <!-- INDIA SUBCONTINENT -->
+          <path d="M 694,133 L 714,128 L 733,131 L 753,131 L 769,133
+                   L 783,136 L 789,144 L 792,153 L 789,164 L 778,172
+                   L 764,181 L 750,189 L 739,197 L 728,211 L 722,228
+                   L 711,228 L 703,222 L 697,211 L 694,197 L 692,181
+                   L 689,164 L 686,150 L 689,136 L 694,133 Z"/>
+
+          <!-- SRI LANKA -->
+          <ellipse cx="728" cy="236" rx="5" ry="7"/>
+
+          <!-- SE ASIA MAINLAND (Indochina) -->
+          <path d="M 811,147 L 822,147 L 833,153 L 839,161 L 839,172
+                   L 836,183 L 831,194 L 825,203 L 819,211 L 811,219
+                   L 806,214 L 803,203 L 806,192 L 808,181 L 811,167
+                   L 811,153 Z"/>
+
+          <!-- MALAYSIA/BORNEO approximate -->
+          <path d="M 808,236 L 825,228 L 839,231 L 847,239 L 847,247
+                   L 842,253 L 831,253 L 819,247 L 811,242 Z"/>
+
+          <!-- JAPANESE ISLANDS approximate -->
+          <path d="M 861,125 L 869,119 L 878,122 L 878,128 L 872,133
+                   L 864,131 Z"/>
+          <path d="M 872,136 L 878,133 L 886,136 L 886,144 L 878,147
+                   L 872,142 Z"/>
+
+          <!-- TAIWAN -->
+          <ellipse cx="847" cy="175" rx="4" ry="8" transform="rotate(-10,847,175)"/>
+
+          <!-- PHILIPPINES approximate -->
+          <path d="M 844,197 L 850,192 L 856,197 L 856,208 L 850,211
+                   L 844,206 Z"/>
+
+          <!-- AUSTRALIA -->
+          <path d="M 817,311 L 833,297 L 847,289 L 864,283 L 881,281
+                   L 897,283 L 911,292 L 919,303 L 922,317 L 922,333
+                   L 919,347 L 911,358 L 900,361 L 886,356 L 872,353
+                   L 858,356 L 844,356 L 833,350 L 825,342 L 819,331
+                   L 814,319 L 817,311 Z"/>
+
+          <!-- TASMANIA -->
+          <ellipse cx="900" cy="372" rx="7" ry="9"/>
+
+          <!-- NEW ZEALAND approximate -->
+          <path d="M 942,358 L 947,350 L 953,356 L 950,364 L 944,364 Z"/>
+          <path d="M 939,369 L 944,364 L 947,372 L 942,381 L 936,378 Z"/>
+
+        </g><!-- end continents -->
+
+        <!-- ══ ANIMATED CONNECTION LINES from IIT Kanpur (723,176) ══ -->
+        <!-- To Berlin (537,104) -->
+        <path class="conn-line" d="M 723,176 Q 680,120 600,100 Q 570,92 537,104" style="animation-delay:0s"/>
+        <!-- To Helsinki (569,83) -->
+        <path class="conn-line" d="M 723,176 Q 690,110 630,88 Q 600,78 569,83" style="animation-delay:0.8s"/>
+        <!-- To Strasbourg/France (522,115) -->
+        <path class="conn-line" d="M 723,176 Q 670,130 590,115 Q 555,108 522,115" style="animation-delay:1.6s"/>
+        <!-- To Lonar (712,194) -->
+        <path class="conn-line" d="M 723,176 Q 720,184 712,194" stroke-opacity="0.5" style="animation-delay:2.4s"/>
+
+        <!-- ══ MARKERS GROUP ══ -->
+        <g id="markers" filter="url(#glow)"></g>
+
+        <!-- ══ AXIS LABELS ══ -->
+        <g font-family="monospace" font-size="7" fill="#1e3248" text-anchor="middle">
+          <text x="83"  y="497">150°W</text>
+          <text x="167" y="497">120°W</text>
+          <text x="250" y="497">90°W</text>
+          <text x="333" y="497">60°W</text>
+          <text x="417" y="497">30°W</text>
+          <text x="500" y="497">0°</text>
+          <text x="583" y="497">30°E</text>
+          <text x="667" y="497">60°E</text>
+          <text x="750" y="497">90°E</text>
+          <text x="833" y="497">120°E</text>
+          <text x="917" y="497">150°E</text>
+        </g>
+        <g font-family="monospace" font-size="7" fill="#1e3248" text-anchor="start">
+          <text x="4" y="254">0°</text>
+          <text x="4" y="199">23°N</text>
+          <text x="4" y="123">60°N</text>
+          <text x="4" y="307">23°S</text>
+          <text x="4" y="384">60°S</text>
+        </g>
+
+      </svg>
+    </div>
+    <div class="collab-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:#d67e38"></div>IIT Kanpur (Home)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#f0a855"></div>Research Sites (Lonar · Kharagpur)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#6ea8d8"></div>Conferences (Berlin · Helsinki)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#7dcfb6"></div>Collaborators (France · Germany)</div>
+    </div>
   </div>
 </section>
-
-<!-- ══ FEATURE: COLLABORATION MAP ══ -->
-<div class="stripe collab-section" id="collabsection">
-  <div class="sec">
-    <div class="reveal">
-      <div class="eyebrow">Global Reach</div>
-      <h2 class="stitle">Collaboration<br><em>Network</em></h2>
-      <p class="ssub">Where my co-authors are based and where I've presented — hover any marker for details.</p>
-    </div>
-    <div class="map-wrap reveal">
-      <div class="collab-svg-wrap" id="mapContainer">
-        <div class="map-tooltip" id="mapTooltip"></div>
-        <svg id="collabMap" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
-          <defs><radialGradient id="mbg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#0d1520"/><stop offset="100%" stop-color="#060609"/></radialGradient></defs>
-          <rect width="1000" height="500" fill="url(#mbg)"/>
-          <!-- Landmasses -->
-          <path d="M60,80 L180,70 L220,90 L240,130 L230,180 L200,220 L170,250 L140,270 L120,260 L100,230 L80,200 L60,160 L50,120Z" fill="#151c28" stroke="#1e2535" stroke-width="1"/>
-          <path d="M150,270 L200,260 L220,290 L230,340 L220,390 L200,430 L170,450 L140,440 L130,400 L135,350 L140,300Z" fill="#151c28" stroke="#1e2535" stroke-width="1"/>
-          <path d="M440,60 L510,55 L530,75 L520,100 L500,110 L480,120 L460,115 L440,100 L430,80Z" fill="#151c28" stroke="#1e2535" stroke-width="1"/>
-          <path d="M450,130 L530,120 L560,150 L570,200 L560,260 L540,320 L510,370 L480,380 L450,360 L430,300 L420,240 L425,180 L435,150Z" fill="#151c28" stroke="#1e2535" stroke-width="1"/>
-          <path d="M520,55 L700,50 L820,70 L840,100 L830,140 L800,160 L760,170 L720,165 L680,180 L650,190 L600,185 L560,175 L530,150 L515,120 L515,80Z" fill="#151c28" stroke="#1e2535" stroke-width="1"/>
-          <path d="M600,185 L650,185 L680,195 L690,230 L670,270 L640,280 L610,260 L600,225Z" fill="#151c28" stroke="#1e2535" stroke-width="1"/>
-          <path d="M720,165 L800,160 L820,185 L810,210 L780,220 L750,215 L720,200Z" fill="#151c28" stroke="#1e2535" stroke-width="1"/>
-          <path d="M760,280 L860,270 L890,300 L880,350 L850,375 L800,370 L770,345 L750,310Z" fill="#151c28" stroke="#1e2535" stroke-width="1"/>
-          <!-- Grid -->
-          <line x1="0" y1="250" x2="1000" y2="250" stroke="#1a2030" stroke-width="0.5"/>
-          <line x1="500" y1="0" x2="500" y2="500" stroke="#1a2030" stroke-width="0.5"/>
-          <line x1="0" y1="125" x2="1000" y2="125" stroke="#1a2030" stroke-width="0.3"/>
-          <line x1="0" y1="375" x2="1000" y2="375" stroke="#1a2030" stroke-width="0.3"/>
-          <line x1="250" y1="0" x2="250" y2="500" stroke="#1a2030" stroke-width="0.3"/>
-          <line x1="750" y1="0" x2="750" y2="500" stroke="#1a2030" stroke-width="0.3"/>
-          <!-- Connection lines from IIT Kanpur (635,218) -->
-          <path class="conn-line" d="M635,218 Q560,130 500,62" style="animation-delay:0s"/>
-          <path class="conn-line" d="M635,218 Q562,145 489,80" style="animation-delay:1s"/>
-          <path class="conn-line" d="M635,218 Q555,150 475,90" style="animation-delay:2s"/>
-          <path class="conn-line" d="M635,218 Q648,245 625,248" style="animation-delay:.5s"/>
-          <g id="markers"></g>
-        </svg>
-      </div>
-      <div class="collab-legend">
-        <div class="leg-item"><div class="leg-dot" style="background:#d67e38"></div>Home Institution (IIT Kanpur)</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#f0a855"></div>Research Site (Lonar Crater)</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#6ea8d8"></div>Conference (Berlin · Helsinki)</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#7dcfb6"></div>Collaborator (France · Germany)</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- LOCATION -->
 <div class="stripe" id="location">
@@ -660,7 +770,7 @@ footer span{font-size:0.72rem;color:var(--dim)}
   <span>Impact Geology · Earth Sciences</span>
 </footer>
 
-<!-- VISITOR COUNTER BAR -->
+<!-- VISITOR COUNTER -->
 <div class="visitor-bar">
   <div class="visitor-bar-inner">
     <div class="visitor-dot"></div>
@@ -711,80 +821,11 @@ window.addEventListener('scroll',()=>{const s=document.getElementById('strata');
 document.querySelectorAll('.loc-map').forEach(f=>f.style.pointerEvents='none');
 document.querySelectorAll('.loc-card').forEach(c=>c.addEventListener('mouseenter',()=>c.querySelector('iframe').style.pointerEvents='none'));
 
-// ════════════════════════════════════
-// FEATURE: INTERACTIVE GLOBE
-// ════════════════════════════════════
-(function(){
-  const canvas=document.getElementById('globeCanvas');
-  if(!canvas||typeof THREE==='undefined')return;
-  const W=canvas.offsetWidth,H=canvas.offsetHeight;
-  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-  renderer.setSize(W,H);renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(45,W/H,.1,100);
-  camera.position.z=2.5;
-  const tc=document.createElement('canvas');tc.width=512;tc.height=256;
-  const tctx=tc.getContext('2d');
-  tctx.fillStyle='#0a1628';tctx.fillRect(0,0,512,256);
-  function ll(lon,lat){return[(lon+180)/360*512,(90-lat)/180*256]}
-  const lands=[
-    [ll(-170,70),ll(-60,70),ll(-55,45),ll(-70,25),ll(-85,15),ll(-120,15),ll(-140,60),ll(-165,65)],
-    [ll(-82,12),ll(-60,12),ll(-35,-5),ll(-35,-55),ll(-70,-55),ll(-80,-30),ll(-80,5)],
-    [ll(-10,70),ll(40,70),ll(40,35),ll(28,35),ll(10,38),ll(-10,44),ll(-10,50)],
-    [ll(-18,37),ll(50,37),ll(50,-35),ll(15,-35),ll(10,-35),ll(-18,10)],
-    [ll(25,70),ll(145,70),ll(145,25),ll(120,20),ll(80,10),ll(60,25),ll(40,40),ll(25,55)],
-    [ll(68,38),ll(90,28),ll(80,8),ll(72,8),ll(68,22)],
-    [ll(113,-22),ll(154,-22),ll(154,-38),ll(130,-38),ll(113,-30)],
-  ];
-  tctx.fillStyle='#1a2a1a';
-  lands.forEach(land=>{tctx.beginPath();land.forEach((p,i)=>i===0?tctx.moveTo(p[0],p[1]):tctx.lineTo(p[0],p[1]));tctx.closePath();tctx.fill()});
-  tctx.strokeStyle='rgba(30,60,80,.3)';tctx.lineWidth=.5;
-  for(let lon=-180;lon<=180;lon+=30){const x=ll(lon,0)[0];tctx.beginPath();tctx.moveTo(x,0);tctx.lineTo(x,256);tctx.stroke()}
-  for(let lat=-90;lat<=90;lat+=30){const y=ll(0,lat)[1];tctx.beginPath();tctx.moveTo(0,y);tctx.lineTo(512,y);tctx.stroke()}
-  const texture=new THREE.CanvasTexture(tc);
-  const globe=new THREE.Mesh(new THREE.SphereGeometry(1,64,64),new THREE.MeshPhongMaterial({map:texture,specular:new THREE.Color(0x112244),shininess:8}));
-  scene.add(globe);
-  scene.add(new THREE.Mesh(new THREE.SphereGeometry(1.02,32,32),new THREE.MeshPhongMaterial({color:0x1a4080,transparent:true,opacity:.08,side:THREE.FrontSide})));
-  const al=new THREE.AmbientLight(0xffffff,.3);scene.add(al);
-  const sun=new THREE.DirectionalLight(0xffd4a0,1.2);sun.position.set(3,1,2);scene.add(sun);
-  const fill=new THREE.DirectionalLight(0x2244aa,.3);fill.position.set(-2,-1,-1);scene.add(fill);
-  const SITES=[['IIT Kanpur',26.51,80.23,'#d67e38'],['Lonar Crater',19.97,76.50,'#f0a855'],['IIT Kharagpur',22.32,87.32,'#6ea8d8'],['Helsinki',60.17,24.94,'#a89ee0'],['Berlin',52.52,13.40,'#7dcfb6']];
-  function latLon2Vec(lat,lon,r=1.015){const phi=(90-lat)*Math.PI/180,theta=(lon+180)*Math.PI/180;return new THREE.Vector3(-r*Math.sin(phi)*Math.cos(theta),r*Math.cos(phi),r*Math.sin(phi)*Math.sin(theta))}
-  const dots=[];
-  SITES.forEach(([name,lat,lon,color])=>{
-    const pos=latLon2Vec(lat,lon);
-    const dot=new THREE.Mesh(new THREE.SphereGeometry(.02,8,8),new THREE.MeshBasicMaterial({color}));
-    dot.position.copy(pos);scene.add(dot);dots.push(dot);
-    const ring=new THREE.Mesh(new THREE.RingGeometry(.028,.038,16),new THREE.MeshBasicMaterial({color,transparent:true,opacity:.5,side:THREE.DoubleSide}));
-    ring.position.copy(pos);ring.lookAt(0,0,0);scene.add(ring);dots.push(ring);
-  });
-  let isDrag=false,pvX=0,pvY=0,velX=0,velY=0,rotX=.3,rotY=0,focusMode=false,focusT=0,tLat=26.51,tLon=80.23,autoRot=true;
-  canvas.addEventListener('mousedown',e=>{isDrag=true;pvX=e.clientX;pvY=e.clientY;autoRot=false;focusMode=false});
-  window.addEventListener('mouseup',()=>{isDrag=false});
-  canvas.addEventListener('mousemove',e=>{if(!isDrag)return;velY+=(e.clientX-pvX)*.008;velX+=(e.clientY-pvY)*.008;pvX=e.clientX;pvY=e.clientY});
-  let lt=null;
-  canvas.addEventListener('touchstart',e=>{lt=e.touches[0];autoRot=false},{passive:true});
-  canvas.addEventListener('touchmove',e=>{e.preventDefault();const t=e.touches[0];velY+=(t.clientX-lt.clientX)*.008;velX+=(t.clientY-lt.clientY)*.008;lt=t},{passive:false});
-  window.focusSite=function(el,lat,lon){document.querySelectorAll('.site-card').forEach(c=>c.classList.remove('active'));el.classList.add('active');tLat=lat;tLon=lon;focusMode=true;focusT=0};
-  function animate(){
-    requestAnimationFrame(animate);
-    if(focusMode){focusT=Math.min(focusT+.015,1);const e=1-Math.pow(1-focusT,3),tY=(-tLon-180)*Math.PI/180,tX=(-tLat)*Math.PI/180*.5;rotY+=(tY-rotY)*e*.06;rotX+=(tX-rotX)*e*.06;if(focusT>=1)focusMode=false}
-    else if(autoRot){velY+=.003}
-    velX*=.92;velY*=.92;rotX+=velX;rotY+=velY;rotX=Math.max(-1.2,Math.min(1.2,rotX));
-    globe.rotation.x=rotX;globe.rotation.y=rotY;
-    dots.forEach(d=>{d.rotation.x=rotX;d.rotation.y=rotY});
-    renderer.render(scene,camera);
-  }
-  animate();
-  window.addEventListener('resize',()=>{const nW=canvas.offsetWidth,nH=canvas.offsetHeight;renderer.setSize(nW,nH);camera.aspect=nW/nH;camera.updateProjectionMatrix()});
-})();
-
-// ════════════════════════════════════
-// FEATURE: CRATER COMPARATOR
-// ════════════════════════════════════
+// ── CRATER COMPARATOR ──
 (function(){
   const craters=[
-    {name:'Lonar',     dia:1.8,  age:'~50k yrs', loc:'Maharashtra, India',color:'#d67e38',highlight:true},
-    {name:'Barringer', dia:1.2,  age:'~50k yrs', loc:'Arizona, USA',      color:'#6ea8d8',highlight:false},
+    {name:'Lonar',     dia:1.8,  age:'~50k yrs',loc:'Maharashtra, India', color:'#d67e38',highlight:true},
+    {name:'Barringer', dia:1.2,  age:'~50k yrs',loc:'Arizona, USA',       color:'#6ea8d8',highlight:false},
     {name:'Ries',      dia:26,   age:'~15M yrs', loc:'Bavaria, Germany',  color:'#7dcfb6',highlight:false},
     {name:'Chicxulub', dia:180,  age:'~66M yrs', loc:'Yucatán, Mexico',   color:'#a89ee0',highlight:false},
   ];
@@ -799,35 +840,52 @@ document.querySelectorAll('.loc-card').forEach(c=>c.addEventListener('mouseenter
   });
 })();
 
-// ════════════════════════════════════
-// FEATURE: COLLABORATION MAP
-// ════════════════════════════════════
+// ── COLLABORATION MAP MARKERS ──
 (function(){
-  const points=[
-    {name:'IIT Kanpur',      role:'Home Institution',       x:635,y:218,color:'#d67e38',r:8},
-    {name:'Lonar Crater',    role:'Primary Research Site',  x:618,y:240,color:'#f0a855',r:6},
-    {name:'IIT Kharagpur',   role:'Past Institution',       x:662,y:226,color:'#f0a855',r:5},
-    {name:'Berlin',          role:'EPSC 2024 Conference',   x:489,y:80, color:'#6ea8d8',r:6},
-    {name:'Helsinki',        role:'EPSC-DPS 2025 Conference',x:500,y:62,color:'#6ea8d8',r:6},
-    {name:'Strasbourg',      role:'Collaborator — France',  x:472,y:92, color:'#7dcfb6',r:5},
-    {name:'Potsdam',         role:'Collaborator — Germany', x:493,y:78, color:'#7dcfb6',r:5},
+  // x=(lon+180)/360*1000  y=(90-lat)/180*500
+  const POINTS=[
+    {name:'IIT Kanpur',         role:'Home Institution · PhD Research',          x:723, y:176, color:'#d67e38', r:9},
+    {name:'Lonar Crater',       role:'Primary Research Site · 4 Expeditions',    x:712, y:194, color:'#f0a855', r:7},
+    {name:'IIT Kharagpur',      role:'M.Sc Geology (CPI 9.18/10)',               x:742, y:188, color:'#f0a855', r:6},
+    {name:'Berlin, Germany',    role:'EPSC 2024 · Double-layered ejecta paper',   x:537, y:104, color:'#6ea8d8', r:7},
+    {name:'Helsinki, Finland',  role:'EPSC-DPS 2025 · Ries & Lonar craters',     x:569, y:83,  color:'#6ea8d8', r:7},
+    {name:'Strasbourg, France', role:'International collaborator (stylolites)',   x:522, y:115, color:'#7dcfb6', r:6},
+    {name:'Potsdam, Germany',   role:'International collaborator (ejecta)',       x:536, y:105, color:'#7dcfb6', r:6},
   ];
+
   const g=document.getElementById('markers');
   const tooltip=document.getElementById('mapTooltip');
   const container=document.getElementById('mapContainer');
   if(!g||!tooltip||!container)return;
-  points.forEach(p=>{
+
+  POINTS.forEach((p,idx)=>{
+    // Pulsing ring
     const pulse=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    pulse.setAttribute('cx',p.x);pulse.setAttribute('cy',p.y);pulse.setAttribute('r',p.r);
-    pulse.setAttribute('fill','none');pulse.setAttribute('stroke',p.color);pulse.setAttribute('stroke-width','1.5');
-    pulse.classList.add('pulse-ring');pulse.style.animationDelay=(Math.random()*2)+'s';
+    pulse.setAttribute('cx',p.x); pulse.setAttribute('cy',p.y); pulse.setAttribute('r',p.r+2);
+    pulse.setAttribute('fill','none'); pulse.setAttribute('stroke',p.color); pulse.setAttribute('stroke-width','1.5');
+    pulse.classList.add('pulse-ring');
+    pulse.style.animationDelay=(idx*0.4)+'s';
     g.appendChild(pulse);
+
+    // Main dot
     const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    dot.setAttribute('cx',p.x);dot.setAttribute('cy',p.y);dot.setAttribute('r',p.r);
-    dot.setAttribute('fill',p.color);dot.style.cursor='pointer';
-    dot.addEventListener('mouseenter',()=>{tooltip.innerHTML=`<strong>${p.name}</strong><span>${p.role}</span>`;tooltip.style.opacity='1'});
-    dot.addEventListener('mousemove',e=>{const r=container.getBoundingClientRect();let tx=e.clientX-r.left+14,ty=e.clientY-r.top-10;if(tx+210>r.width)tx=e.clientX-r.left-200;tooltip.style.left=tx+'px';tooltip.style.top=ty+'px'});
-    dot.addEventListener('mouseleave',()=>{tooltip.style.opacity='0'});
+    dot.setAttribute('cx',p.x); dot.setAttribute('cy',p.y); dot.setAttribute('r',p.r);
+    dot.setAttribute('fill',p.color); dot.setAttribute('opacity','0.92');
+    dot.style.cursor='pointer';
+
+    dot.addEventListener('mouseenter',()=>{
+      tooltip.innerHTML=`<strong>${p.name}</strong><span>${p.role}</span>`;
+      tooltip.style.opacity='1';
+    });
+    dot.addEventListener('mousemove',e=>{
+      const r=container.getBoundingClientRect();
+      let tx=e.clientX-r.left+16, ty=e.clientY-r.top-14;
+      if(tx+220>r.width) tx=e.clientX-r.left-225;
+      if(ty<0) ty=e.clientY-r.top+20;
+      tooltip.style.left=tx+'px';
+      tooltip.style.top=ty+'px';
+    });
+    dot.addEventListener('mouseleave',()=>{ tooltip.style.opacity='0'; });
     g.appendChild(dot);
   });
 })();
