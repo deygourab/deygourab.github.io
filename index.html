@@ -300,6 +300,41 @@ footer{border-top:2px solid var(--line);background:var(--ink);color:var(--paper)
 @media(max-width:520px){
   .skills-grid,.awards-row{grid-template-columns:1fr}
 }
+/* Research questions: an insert between the original project and publication plates. */
+#research-questions {scroll-margin-top:60px}
+.rq-study {border-top:1px solid var(--line);padding:clamp(1.5rem,3.2vw,2.5rem) 0}
+.rq-split {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:clamp(1.5rem,4vw,3.75rem)}
+.rq-meta,.rq-action,.rq-credit {font-family:'IBM Plex Mono',monospace}
+.rq-meta {color:var(--rust-dk);font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600;margin:0 0 .55rem}
+.rq-study h3 {font:750 clamp(1.42rem,2.65vw,2.4rem)/1.13 'Archivo',sans-serif;letter-spacing:-.028em;max-width:34ch;color:var(--ink);margin:0 0 1rem}
+.rq-study p:not(.rq-meta) {font-size:1rem;line-height:1.7;max-width:73ch;margin:.7rem 0;color:var(--mute)}
+.rq-study strong {color:var(--ink)}
+.rq-study a,.rq-figure a {color:var(--rust-dk);text-underline-offset:.2em}
+.rq-action {display:inline-block;font-size:.81rem;font-weight:600;margin:.3rem 1.2rem .15rem 0}
+.rq-art,.rq-figure {border:1px solid var(--line);margin:0;background:#fff;min-width:0}
+.rq-stage {position:relative;background-color:#1b392e;background-image:radial-gradient(#aec2a530 1px,transparent 1px);background-size:16px 16px}
+.rq-stage img {display:block;width:100%;height:auto}
+.rq-stage svg {position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.rq-art figcaption,.rq-figure figcaption {font:.86rem/1.55 'Inter',sans-serif;padding:.65rem .9rem;border-top:1px solid var(--line);color:var(--mute)}
+.rq-art figcaption b,.rq-figure figcaption b {color:var(--ink)}
+.rq-images {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin-top:1.4rem}
+.rq-open {background:#fff;width:100%;border:0;display:flex;align-items:center;justify-content:center;position:relative;padding:.75rem;cursor:zoom-in}
+.rq-open img {display:block;width:100%;height:clamp(205px,21vw,260px);object-fit:contain}
+.rq-mag {position:absolute;bottom:.5rem;right:.5rem;border:1px solid var(--hair);padding:.18rem .48rem;font:500 .74rem/1.4 'IBM Plex Mono',monospace;background:#fff;color:var(--ink)}
+.rq-open:focus-visible,.rq-close:focus-visible {outline:3px solid var(--rust);outline-offset:-3px}
+.rq-credit {font-size:.74rem;color:var(--mute)}
+.rq-figure figcaption .rq-credit {display:block;margin:.22rem 0 0}
+.rq-dialog {position:fixed;margin:auto;border:1px solid var(--line);padding:.8rem;width:min(1140px,96vw);max-width:96vw;max-height:94dvh;background:var(--paper);color:var(--ink);overflow:auto}
+.rq-dialog::backdrop {background:rgba(22,19,16,.82)}
+.rq-toolbar {display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:0 0 .65rem}
+.rq-toolbar h3 {font:700 1.1rem/1.3 'Archivo',sans-serif}
+.rq-close {padding:.45rem .85rem;background:var(--ink);color:#fff;border:1px solid var(--line);font:500 .85rem 'IBM Plex Mono',monospace}
+#rq-enlarged {display:block;margin:auto;max-width:100%;max-height:73dvh;width:auto;height:auto}
+#rq-caption {margin:.65rem 0 0;color:var(--mute);font-size:.9rem}
+@media (max-width:900px) {.rq-split {grid-template-columns:minmax(0,1fr)}.rq-art {width:min(100%,600px)}}
+@media (max-width:640px) {.rq-images {grid-template-columns:minmax(0,1fr)}.rq-open img {height:auto;max-height:360px}.rq-study h3 {max-width:100%}}
+@media (min-width:901px) and (max-width:1100px) {.nav-links a {padding-inline:.62rem}}
+
 </style>
 </head>
 <body>
@@ -341,6 +376,7 @@ footer{border-top:2px solid var(--line);background:var(--ink);color:var(--paper)
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#research-questions">Questions</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#location">Location</a></li>
     </ul>
@@ -352,6 +388,7 @@ footer{border-top:2px solid var(--line);background:var(--ink);color:var(--paper)
   <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#education" onclick="toggleMenu()">Education</a>
   <a href="#research" onclick="toggleMenu()">Research</a>
+  <a href="#research-questions" onclick="toggleMenu()">Research questions</a>
   <a href="#publications" onclick="toggleMenu()">Publications</a>
   <a href="#location" onclick="toggleMenu()">Location</a>
   <a href="mailto:gourabdey22@iitk.ac.in" onclick="toggleMenu()">Contact</a>
@@ -477,6 +514,79 @@ footer{border-top:2px solid var(--line);background:var(--ink);color:var(--paper)
       <div class="exp-card"><div class="exp-period">M.Sc Fieldwork · Dec 2019</div><div><div class="exp-ttl">Sedimentary & Structural Mapping</div><div class="exp-org">Beohari (MP) · Angul (Odisha) · India</div><div class="exp-desc">Fieldwork identifying primary sedimentary structures, paleocurrent directions, lithology and sand body architecture in Beohari. Separate campaign for regional outcrop mapping and strain analysis in Angul District, Odisha.</div></div></div>
       <div class="exp-card"><div class="exp-period">2022 – Present</div><div><div class="exp-ttl">Teaching Assistant — IIT Kanpur</div><div class="exp-org">Dept. of Earth Sciences · DUGC</div><div class="exp-desc">Course management for "Introduction to Professional and Communication Skills in Earth Sciences." Field TA at Chitrakoot for hands-on undergraduate geoscience training. Member, AAPG — IIT Kharagpur Chapter.</div></div></div>
     </div>
+  </div>
+</section>
+
+<!-- Research Questions: accompanying publications and their figures -->
+<section class="plate" id="research-questions" aria-labelledby="rq-heading">
+  <div class="wrap">
+    <div class="plate-head">
+      <div class="plate-no">Plate<b>03B</b></div>
+      <div class="plate-title"><h2 id="rq-heading">Research<br><em>Questions</em></h2></div>
+      <div class="plate-sub">The questions behind my papers, the evidence we used, and what we learned.</div>
+    </div>
+    <article class="rq-study">
+      <div class="rq-split">
+        <div>
+          <p class="rq-meta">Impact modelling · Dey et al., 2026</p>
+          <h3>How did Lonar Crater grow, and when did the basalt fracture?</h3>
+          <p>At Lonar we can measure the crater and map fractures in the exposed basalt. What we cannot observe directly is the order in which those fractures formed. I led the study design, methodology and investigation, and wrote the first draft. We used iSALE-2D simulations to compare the evolving cavity with the crater profile and fracture patterns observed in the field.</p>
+          <p>Five seconds after impact, the simulated cavity was <strong>1,415 m wide and 530 m deep</strong>. As its walls collapsed, its final rim-to-rim diameter reached about <strong>1,900 m</strong>. Shallow fractures appeared first in the model, followed by radial and then concentric fractures.</p>
+          <a class="rq-action" href="https://doi.org/10.1029/2026JE009739">Read the JGR: Planets paper</a>
+        </div>
+        <figure class="rq-art">
+          <div class="rq-stage"><img src="impact-relief.webp" width="1150" height="741" alt="Schematic oblique view of a simple impact crater with a raised rim and exposed target-rock layers." loading="lazy">
+            <svg viewBox="0 0 900 580" aria-hidden="true"><g fill="none" stroke="#e2b881" stroke-width="1.7"><path d="M496 119 566 43h82"/><circle cx="496" cy="119" r="4"/></g><text x="570" y="32" fill="#f2d8ae" font-family="monospace" font-size="20">CRATER RIM</text></svg>
+          </div>
+          <figcaption><b>Anatomy of a simple impact crater.</b> Schematic relief showing the raised rim and bowl-shaped cavity. The plots below show the simulation results for Lonar.</figcaption>
+        </figure>
+      </div>
+      <div class="rq-images"><figure class="rq-figure" id="rq-profiles">
+      <a class="rq-open" href="crater-profiles.png" aria-label="Enlarge figure: Crater profiles at Lonar" data-title="Crater profiles at Lonar"><img src="crater-profiles.png" loading="lazy" decoding="async" alt="Cross-section comparing the simulated transient and final crater profiles with present-day topography."><span class="rq-mag" aria-hidden="true">Enlarge</span></a>
+      <figcaption><b>Crater profiles at Lonar.</b> The 5-second cavity is narrower and deeper than the final crater. The present-day surface includes material that later filled the depression. <span class="rq-credit"><a href="https://doi.org/10.1029/2026JE009739">Dey et al. (2026), JGR: Planets</a></span></figcaption>
+    </figure><figure class="rq-figure" id="rq-fractures">
+      <a class="rq-open" href="fracture-sequence.png" aria-label="Enlarge figure: How fractures developed" data-title="How fractures developed"><img src="fracture-sequence.png" loading="lazy" decoding="async" alt="Simulation panels showing near-surface, radial and concentric fractures at 0.50, 1.25 and 4.25 seconds, and a 20-second section."><span class="rq-mag" aria-hidden="true">Enlarge</span></a>
+      <figcaption><b>How fractures developed.</b> The three upper panels follow strain localisation during excavation. The lower panel compares damage and total plastic strain at 20 seconds. <span class="rq-credit"><a href="https://doi.org/10.1029/2026JE009739">Dey et al. (2026), JGR: Planets</a></span></figcaption>
+    </figure></div>
+    </article>
+    <article class="rq-study rq-split">
+      <div>
+        <p class="rq-meta">Impact direction · Tiwari et al., 2025</p>
+        <h3>Can cracks in the basalt tell us which way the impactor travelled?</h3>
+        <p>In this study with Sonal Tiwari and colleagues, we compared plagioclase microfracture densities in samples around the crater rim and wall. We also measured X-ray diffraction peak widths to test whether mineral lattices preserved the same directional pattern.</p>
+        <p>The highest fracture densities occurred in the <strong>southern sector, between 170° and 200°</strong>. Greater damage downrange supports a probable <strong>north-to-south trajectory</strong>. The X-ray peak widths showed no clear trend around the rim, possibly because later hydrothermal alteration affected the minerals.</p>
+        <a class="rq-action" href="https://doi.org/10.17491/jgsi/2025/174116">Read the impact-direction paper</a>
+      </div>
+      <figure class="rq-figure" id="rq-microfractures">
+      <a class="rq-open" href="tiwari-fig3.png" aria-label="Enlarge figure: Fracture density around the rim" data-title="Fracture density around the rim"><img src="tiwari-fig3.png" loading="lazy" decoding="async" alt="Published scatter plot of microfracture density against bearing, with the highest values near 180 degrees."><span class="rq-mag" aria-hidden="true">Enlarge</span></a>
+      <figcaption><b>Fracture density around the rim.</b> Samples 5 and 3 lie near the southern bearing and have the highest densities. The pink band shows the range for unshocked basalt. <span class="rq-credit"><a href="https://doi.org/10.17491/jgsi/2025/174116">Tiwari et al. (2025), Fig. 3, p. 456</a></span></figcaption>
+    </figure>
+    </article>
+    <article class="rq-study">
+      <p class="rq-meta">Burial and erosion · Ruidas et al., 2025</p>
+      <h3>How much Deccan volcanic cover has erosion removed from the Narmada Basin?</h3>
+      <p>In the Bagh Group limestones, jagged seams called stylolites record the pressure under which rock dissolved during burial. I contributed to the study design, fieldwork, photographs, data collection and first draft. Our team traced bedding-parallel seams and analysed how their roughness changed with wavelength to estimate the vertical stress they once carried.</p>
+      <p>The stress estimates correspond to <strong>660–1,320 m of burial</strong>. Given the basin’s stratigraphic history, we interpreted the upper estimate as evidence for roughly <strong>1.3 km of volcanic cover</strong> that has since been eroded.</p>
+      <a class="rq-action" href="https://doi.org/10.3390/min15080766">Read the Minerals paper</a>
+      <div class="rq-images"><figure class="rq-figure" id="rq-outcrops">
+      <a class="rq-open" href="stylolite-outcrops.webp" aria-label="Enlarge figure: Stylolites in the field" data-title="Stylolites in the field"><img src="stylolite-outcrops.webp" loading="lazy" decoding="async" alt="Field photographs, close-ups and line tracings of three stylolite networks in Bagh Group limestone."><span class="rq-mag" aria-hidden="true">Enlarge</span></a>
+      <figcaption><b>Stylolites in the field.</b> At Kasdana quarry, close-ups and tracings show how the seams branch, intersect fractures or extend along bedding. <span class="rq-credit"><a href="https://doi.org/10.3390/min15080766">Ruidas et al. (2025), Fig. 4</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span></figcaption>
+    </figure><figure class="rq-figure" id="rq-inversion">
+      <a class="rq-open" href="stylolite-inversion.webp" aria-label="Enlarge figure: From seam roughness to stress" data-title="From seam roughness to stress"><img src="stylolite-inversion.webp" loading="lazy" decoding="async" alt="Three examples pairing traced stylolite profiles with Fourier power spectra and fitted crossover lengths."><span class="rq-mag" aria-hidden="true">Enlarge</span></a>
+      <figcaption><b>From seam roughness to stress.</b> Read each row from left to right. A traced seam gives a power spectrum, and the crossover between slopes supplies the length used to estimate burial stress. <span class="rq-credit"><a href="https://doi.org/10.3390/min15080766">Ruidas et al. (2025), Fig. 7</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span></figcaption>
+    </figure></div>
+    </article>
+    <article class="rq-study">
+      <p class="rq-meta">Ejecta emplacement · Wilk et al., 2024 &amp; 2025</p>
+      <h3>What can two layers of ejecta tell us about how material moved away from a crater?</h3>
+      <p>In our 2024 conference study, we reported two distinct ejecta layers at Lonar. At Ries in Germany, striations survive at the buried contact between layers. We compared the deposits using drone topography, ground-penetrating radar and observations of the rocks themselves.</p>
+      <p>Our 2025 contribution examined the two craters together as Earth analogues for layered ejecta on Mars. The layering gives us a way to test how successive deposits moved. The role of water or other volatiles in that movement remains an open question.</p>
+      <a class="rq-action" href="https://doi.org/10.5194/epsc2024-1138">Berlin abstract · 2024</a><a class="rq-action" href="https://doi.org/10.5194/epsc-dps2025-1537">Helsinki abstract · 2025</a>
+    </article>
+    <dialog id="rq-viewer" class="rq-dialog" aria-labelledby="rq-title" aria-describedby="rq-caption">
+      <div class="rq-toolbar"><h3 id="rq-title">Publication figure</h3><button class="rq-close" type="button" autofocus>Close figure</button></div>
+      <img id="rq-enlarged" alt=""><p id="rq-caption"></p>
+    </dialog>
   </div>
 </section>
 
@@ -933,6 +1043,34 @@ document.querySelectorAll('.loc-map').forEach(f=>f.style.pointerEvents='none');
     }
     sinceEl.textContent='Since '+new Date(data.since).toLocaleDateString('en-IN',{year:'numeric',month:'short',day:'numeric'});
   }catch(e){countEl.textContent='—';sinceEl.textContent='Counter unavailable'}
+})();
+</script>
+<script>
+// Enlarge the published figure without navigating away from its research question.
+(() => {
+  const section = document.getElementById('research-questions');
+  const dialog = document.getElementById('rq-viewer');
+  const fullImage = document.getElementById('rq-enlarged');
+  if (typeof dialog.showModal !== 'function') return;
+  section.addEventListener('click', event => {
+    const control = event.target.closest('.rq-open');
+    if (!control) return;
+    event.preventDefault();
+    const thumbnail = control.querySelector('img');
+    fullImage.src = thumbnail.currentSrc || thumbnail.src;
+    fullImage.alt = thumbnail.alt;
+    document.getElementById('rq-title').textContent = control.dataset.title;
+    document.getElementById('rq-caption').textContent =
+      control.closest('figure').querySelector('figcaption').textContent.trim();
+    dialog.showModal();
+  });
+  dialog.querySelector('.rq-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const box = dialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right ||
+        event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+  });
 })();
 </script>
 </body>
